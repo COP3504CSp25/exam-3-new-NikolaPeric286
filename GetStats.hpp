@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 struct Node {
     int data;
     Node* next;
@@ -37,13 +38,15 @@ public:
                 min = search_head->data;
             }
             node_count++;
-            search_head = head->next;
+            search_head = search_head->next;
         }
         //[min, max, mean]
+        std::cout << "Data collected\n";
         return_array[0] = min;
         return_array[1] = max;
         return_array[2] = sum/node_count;
 
+        return return_array;
     }
     
 
