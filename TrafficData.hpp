@@ -19,14 +19,15 @@ std::map<std::string, int> loadTrafficData(const std::string& filename) {
   std::string line_string;
   std::string name;
   std::string number;
-  while ( getline(file, line_string, '\n')){
+  size_t iter_count = 0;
+  while ( getline(file, line_string, '\n') && iter_count < 1000){
     std::stringstream streamed_string(line_string);
 
     getline(streamed_string, name, ',');
     getline(streamed_string, number, '\n');
 
     return_map[name] = stoi(number);
-  
+    iter_count++;
   }
 
   return return_map;
