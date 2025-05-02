@@ -25,14 +25,17 @@ public:
         LinkedList return_List;
 
         Node* search_head = head;
-        while( search_head != nullptr){
+        size_t iter_count = 0;
+        while( search_head != nullptr && iter_count < 1000){
             node_stack.push(search_head);
             search_head = search_head->next;
+            iter_count++;
         }
-
-        while ( !node_stack.empty()){
+        iter_count = 0;
+        while ( !node_stack.empty() && iter_count < 1000){
             return_List.addHead( node_stack.top()->data);
             node_stack.pop();
+            iter_count++;
         }
     
         return return_List;
