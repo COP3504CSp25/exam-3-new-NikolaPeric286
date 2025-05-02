@@ -29,7 +29,9 @@ public:
         int node_count = 0;
         Node* search_head = head;
 
-        while (search_head != nullptr){
+        size_t iter_count = 0;
+        while (search_head != nullptr && iter_count < 1000){
+            
             sum += search_head->data;
             if (search_head->data > max){
                 max = search_head->data;
@@ -39,6 +41,7 @@ public:
             }
             node_count++;
             search_head = search_head->next;
+            iter_count++;
         }
         //[min, max, mean]
         std::cout << "Data collected\n";
