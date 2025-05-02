@@ -23,14 +23,14 @@ public:
             return_array[2] = 0;
             return return_array;
         }
-        int sum = 0;
-        int min = 0;
-        int max = 0;
+        
         int node_count = 0;
         Node* search_head = head;
-
+        int sum = 0;
+        int min = head->data;
+        int max = head->data;
         size_t iter_count = 0;
-        while (search_head != nullptr && iter_count < 100){
+        while (search_head != nullptr && iter_count < 1000){
             
             sum += search_head->data;
             if (search_head->data > max){
