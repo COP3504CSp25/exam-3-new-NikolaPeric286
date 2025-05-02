@@ -26,13 +26,13 @@ public:
 
         Node* search_head = head;
         size_t iter_count = 0;
-        while( search_head != nullptr && iter_count < 1000){
+        while( search_head != nullptr && iter_count < 100){
             node_stack.push(search_head);
             search_head = search_head->next;
             iter_count++;
         }
         iter_count = 0;
-        while ( !node_stack.empty() && iter_count < 1000){
+        while ( !node_stack.empty() && iter_count < 100){
             return_List.addHead( node_stack.top()->data);
             node_stack.pop();
             iter_count++;

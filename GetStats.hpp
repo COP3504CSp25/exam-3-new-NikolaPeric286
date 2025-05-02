@@ -30,7 +30,7 @@ public:
         Node* search_head = head;
 
         size_t iter_count = 0;
-        while (search_head != nullptr && iter_count < 1000){
+        while (search_head != nullptr && iter_count < 100){
             
             sum += search_head->data;
             if (search_head->data > max){

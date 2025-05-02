@@ -20,7 +20,7 @@ std::map<std::string, int> loadTrafficData(const std::string& filename) {
   std::string name;
   std::string number;
   size_t iter_count = 0;
-  while ( getline(file, line_string, '\n') && iter_count < 1000){
+  while ( getline(file, line_string, '\n') && iter_count < 100){
     std::stringstream streamed_string(line_string);
 
     getline(streamed_string, name, ',');

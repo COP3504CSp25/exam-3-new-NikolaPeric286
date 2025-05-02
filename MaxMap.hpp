@@ -28,7 +28,7 @@ std::map<std::string, float> returnMaxMap(const std::map<std::string, std::vecto
 
     for(auto it = in_map.begin(); it != in_map.end(); it++){
         float max = 0;
-        for(auto vec_it = it->second.begin(); vec_it != it->second.end(); it++){
+        for(auto vec_it = it->second.begin(); vec_it != it->second.end(); vec_it++){
             if (*vec_it > max){
                 max = *vec_it;
             }
