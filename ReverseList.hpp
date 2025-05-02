@@ -1,5 +1,6 @@
 #pragma once
 #include <stack>
+#include <queue>
 struct Node {
     int data;
     Node* next;
@@ -21,20 +22,20 @@ public:
         if(head->next == nullptr){
             return *this;
         }
-        std::stack<Node*> node_stack; 
+        std::queue<Node*> node_queue; 
         LinkedList return_List;
 
         Node* search_head = head;
         size_t iter_count = 0;
         while( search_head != nullptr && iter_count < 100){
-            node_stack.push(search_head);
+            node_queue.push(search_head);
             search_head = search_head->next;
             iter_count++;
         }
         iter_count = 0;
-        while ( !node_stack.empty() && iter_count < 100){
-            return_List.addHead( node_stack.top()->data);
-            node_stack.pop();
+        while ( !node_queue.empty() && iter_count < 100){
+            return_List.addHead( node_queue.front()->data);
+            node_queue.pop();
             iter_count++;
         }
     
